@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  cloudFunctionEndpoint: 'https://us-central1-ionicpushnotification-4d146.cloudfunctions.net/notificacions'
 };
 
 /*

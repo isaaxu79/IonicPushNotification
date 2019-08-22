@@ -1,14 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Push Notification
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card" *ngFor="let token of tokens">
+          <ion-title>
+            {{token.token}}
+          </ion-title>
+            <ion-button (click)="sendNotification(token.token)" fill="clear">
+              <ion-icon name="send"></ion-icon>
+            </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="full" color="primary" (click)="requestPermissions()">Habilitar notificaciones push</ion-button>
 </ion-content>
